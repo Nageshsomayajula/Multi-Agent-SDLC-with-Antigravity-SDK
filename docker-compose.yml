@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    env_file: ./backend/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data:/app/data
+
+  janus:
+    image: meetecho/janus-gateway:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - JGROUPS_PING_PROTOCOL=PING
+    volumes:
+      - ./janus-config:/etc/janus
+
+  redis:
+    image: redis:7
+    restart: unless-stopped

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: call-agent-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: call-agent-backend
+  template:
+    metadata:
+      labels:
+        app: call-agent-backend
+    spec:
+      containers:
+        - name: backend
+          image: your-registry/call-agent-backend:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: call-agent-secrets
