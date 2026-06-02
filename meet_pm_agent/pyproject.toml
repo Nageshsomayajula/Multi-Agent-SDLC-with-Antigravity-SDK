@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meet-pm-agent"
+version = "0.1.0"
+description = "Browser-based Google Meet project manager agent powered by Claude"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic>=0.51.0",
+  "playwright>=1.52.0",
+  "python-dotenv>=1.0.1",
+  "pydantic>=2.11.0",
+  "pydantic-settings>=2.8.1",
+  "tenacity>=9.0.0",
+  "orjson>=3.10.0",
+  "edge-tts>=6.1.19",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
