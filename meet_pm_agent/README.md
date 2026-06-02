@@ -94,7 +94,7 @@ python scripts/run_bot.py \
 | Variable | Description |
 | --- | --- |
 | `ANTHROPIC_API_KEY` | API key for Claude |
-| `CLAUDE_MODEL` | Claude model name, for example `claude-sonnet-4-20250514` |
+| `CLAUDE_MODEL` or 'Gemini-3.5-flash' | Claude model name, for example `claude-sonnet` or Gemini Model |
 | `BOT_NAME` | Name the bot listens for in questions |
 | `BOT_ROLE` | Persona instruction, such as project manager |
 | `MEET_PROFILE_DIR` | Persistent Chromium profile path |
